@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>BibliTech</Authors>
+    <Product>Versioned File Provider</Product>
+    <Description>A File Provider that allow custom subpath.</Description>
+    <Copyright>BibliTech 2019</Copyright>
+    <PackageProjectUrl>https://github.com/BibliTech/VersionedFileProvider</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+
+</Project>

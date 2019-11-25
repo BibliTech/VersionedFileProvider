@@ -1,0 +1,35 @@
+﻿@page
+
+<header>
+    <h1>Test Versioned File Provider</h1>
+</header>
+
+<main>
+    <p>
+        <a href="~/js/demo1.js">Demo 1 File</a>
+        <span></span>
+    </p>
+    <p>
+        <a href="~/js/v1/demo1.js">Demo 1 File with Version</a>
+    </p>
+    <p>
+        <a href="~/js/v1/demo2.js">Demo 2 File with Version</a>
+    </p>
+    <p>
+        <link id="lnk-demo1-append-version" href="~/js/demo1.js" asp-append-version="true" />
+        <span>Demo 1 File with Append Version: </span>
+        <span data-display-href="#lnk-demo1-append-version"></span>
+    </p>
+    <p>
+        <link id="lnk-demo1-append-version-version" href="~/js/v1/demo1.js" asp-append-version="true" />
+        <span>Demo 1 File with Version and Append Version <span style="color: red">(not working currently)</span>: </span>
+        <span data-display-href="#lnk-demo1-append-version-version"></span>
+    </p>
+</main>
+
+<script>
+    document.querySelectorAll("[data-display-href]").forEach(el => {
+        let attr = el.getAttribute("data-display-href");
+        el.innerHTML = document.querySelector(attr).getAttribute("href");
+    });
+</script>
