@@ -42,12 +42,14 @@ namespace BibliTech.VersionedFileProvider.Demo
             }
 
             app.UseHttpsRedirection();
-                       
-            env.WebRootFileProvider = new CompositeFileProvider(
-                new VersionedFileProvider(env.WebRootPath),
-                env.WebRootFileProvider);
-            app.UseStaticFiles();
 
+            var versionedFileProvider = new VersionedFileProvider(env.WebRootFileProvider);
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = versionedFileProvider,
+            });
+
+            env.WebRootFileProvider = versionedFileProvider;
 
             app.UseRouting();
 

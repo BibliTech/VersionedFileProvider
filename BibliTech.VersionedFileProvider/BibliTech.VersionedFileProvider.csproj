@@ -6,9 +6,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>BibliTech</Authors>
     <Product>Versioned File Provider</Product>
-    <Description>A File Provider that allow custom subpath.</Description>
-    <Copyright>BibliTech 2019</Copyright>
+    <Description>A File Provider that allow custom version subpath.</Description>
+    <Copyright>BibliTech 2020</Copyright>
     <PackageProjectUrl>https://github.com/BibliTech/VersionedFileProvider</PackageProjectUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

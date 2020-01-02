@@ -6,30 +6,47 @@
 
 <main>
     <p>
-        <a href="~/js/demo1.js">Demo 1 File</a>
-        <span></span>
-    </p>
-    <p>
-        <a href="~/js/v1/demo1.js">Demo 1 File with Version</a>
-    </p>
-    <p>
-        <a href="~/js/v1/demo2.js">Demo 2 File with Version</a>
-    </p>
-    <p>
         <link id="lnk-demo1-append-version" href="~/js/demo1.js" asp-append-version="true" />
         <span>Demo 1 File with Append Version: </span>
-        <span data-display-href="#lnk-demo1-append-version"></span>
+        <a data-display-href="#lnk-demo1-append-version"></a>
     </p>
     <p>
         <link id="lnk-demo1-append-version-version" href="~/js/v1/demo1.js" asp-append-version="true" />
-        <span>Demo 1 File with Version and Append Version <span style="color: red">(not working currently)</span>: </span>
-        <span data-display-href="#lnk-demo1-append-version-version"></span>
+        <span>Demo 1 File with Version and Append Version: </span>
+        <a data-display-href="#lnk-demo1-append-version-version"></a>
+    </p>
+    <p>
+        <link id="lnk-demo1-append-version-version2" href="~/js/v1.0.1/demo1.js" asp-append-version="true" />
+        <span>Demo 1 File with Version and Append Version: </span>
+        <a data-display-href="#lnk-demo1-append-version-version2"></a>
+    </p>
+    <p>
+        <link id="lnk-demo1-append-version-version3" href="~/js/version/v1.0.1/demo3.js" asp-append-version="true" />
+        <span>Demo 3 File with Version and Append Version: </span>
+        <a data-display-href="#lnk-demo1-append-version-version3"></a>
+    </p>
+
+    <hr />
+
+    <h2>Non-existence Files</h2>
+
+    <p>
+        <link id="lnk-non-1" href="~/js/version/v1/v2/demo1.js" asp-append-version="true" />
+        <span>File not exist 1: </span>
+        <a data-display-href="#lnk-non-1"></a>
+    </p>
+
+    <p>
+        <link id="lnk-non-2" href="~/v1/demo1.js" asp-append-version="true" />
+        <span>File not exist 2: </span>
+        <a data-display-href="#lnk-non-2"></a>
     </p>
 </main>
 
 <script>
     document.querySelectorAll("[data-display-href]").forEach(el => {
         let attr = el.getAttribute("data-display-href");
-        el.innerHTML = document.querySelector(attr).getAttribute("href");
+        el.href = el.innerHTML = document.querySelector(attr).getAttribute("href");
+        el.target = "_blank";
     });
 </script>
